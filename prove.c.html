@@ -32,19 +32,26 @@ body { font-family: monospace; color: #000000; background-color: #ffffff; }
 <span class="PreProc">#include </span><span class="Constant">&lt;stdio.h&gt;</span>
 <span class="PreProc">#include </span><span class="Constant">&lt;math.h&gt;</span>
 
-<span class="Type">float</span> get_using_leftmost(<span class="Type">float</span> * p) {
+<span class="Type">float</span> get_using_rightmost(<span class="Type">float</span> * p) {
 	<span class="Statement">return</span> <span class="Constant">1</span>+*p+*p+*p+*p+*p+*p+*p+*p+*p+*p+*p;
 }
 
-<span class="Type">float</span> get_using_rightmost(<span class="Type">float</span> * p) {
+<span class="Type">float</span> get_using_leftmost(<span class="Type">float</span> * p) {
 	<span class="Statement">return</span> ((((((((((<span class="Constant">1</span>+*p)+*p)+*p)+*p)+*p)+*p)+*p)+*p)+*p)+*p);
 }
 
 <span class="Type">int</span> main() {
 	<span class="Type">float</span> p = pow(<span class="Constant">10</span>, -<span class="Constant">7</span>);
+	<span class="Type">float</span> rightmost = get_using_rightmost(&amp;p);
+	<span class="Type">float</span> leftmost = get_using_leftmost(&amp;p);
 	printf(<span class="Constant">&quot;We are currently adding to one the number: </span><span class="Special">%.20f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, p);
-	printf(<span class="Constant">&quot;The first number came to: </span><span class="Special">%.20f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, get_using_leftmost(&amp;p));
-	printf(<span class="Constant">&quot;The second number came to: </span><span class="Special">%.20f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, get_using_rightmost(&amp;p));
+	printf(<span class="Constant">&quot;Addition using rightmost associativity came to: </span><span class="Special">%.20f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, rightmost);
+	printf(<span class="Constant">&quot;Addition using leftmost associativity came to: </span><span class="Special">%.20f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, leftmost);
+	<span class="Statement">if</span> (leftmost != rightmost) {
+		printf(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">Congratulations! The results are not the same!</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>);
+	} <span class="Statement">else</span> {
+		printf(<span class="Constant">&quot;The results are the same.</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
+	}
 }
 </pre>
 </body>
