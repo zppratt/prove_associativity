@@ -1,0 +1,10 @@
+#include <stdio.h> 
+#include <math.h>
+
+int main() {
+	float p = pow(10, -7);
+	printf("The first number came to: %f\n", p);
+	float a = 1+p+p+p+p+p+p+p+p+p+p+p;
+	printf("We are currently adding to one the number: %f\n", adding);
+	printf("The first number came to: %f\n", a);
+}
