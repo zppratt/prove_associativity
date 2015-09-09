@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/git/prove_associative_difference/prove.c.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="c">
+<meta name="settings" content="use_css,pre_wrap,no_foldcolumn,prevent_copy=">
+<meta name="colorscheme" content="none">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #000000; background-color: #ffffff; }
+body { font-family: monospace; color: #000000; background-color: #ffffff; }
+* { font-size: 1em; }
+.Constant { color: #ff6060; }
+.Special { color: #ff40ff; }
+.Statement { color: #ffff00; }
+.PreProc { color: #ff40ff; }
+.Type { color: #00ff00; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="PreProc">#include </span><span class="Constant">&lt;stdio.h&gt;</span>
+<span class="PreProc">#include </span><span class="Constant">&lt;math.h&gt;</span>
+
+<span class="Type">float</span> get_using_leftmost(<span class="Type">float</span> * p) {
+	<span class="Statement">return</span> <span class="Constant">1</span>+*p+*p+*p+*p+*p+*p+*p+*p+*p+*p+*p;
+}
+
+<span class="Type">float</span> get_using_rightmost(<span class="Type">float</span> * p) {
+	<span class="Statement">return</span> ((((((((((<span class="Constant">1</span>+*p)+*p)+*p)+*p)+*p)+*p)+*p)+*p)+*p)+*p);
+}
+
+<span class="Type">int</span> main() {
+	<span class="Type">float</span> p = pow(<span class="Constant">10</span>, -<span class="Constant">7</span>);
+	printf(<span class="Constant">&quot;We are currently adding to one the number: </span><span class="Special">%.20f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, p);
+	printf(<span class="Constant">&quot;The first number came to: </span><span class="Special">%.20f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, get_using_leftmost(&amp;p));
+	printf(<span class="Constant">&quot;The second number came to: </span><span class="Special">%.20f</span><span class="Special">\n</span><span class="Constant">&quot;</span>, get_using_rightmost(&amp;p));
+}
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
